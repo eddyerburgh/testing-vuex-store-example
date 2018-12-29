@@ -20,3 +20,10 @@ test('updates evenOrOdd getter when increment is commited', () => {
   store.commit('increment')
   expect(store.getters.evenOrOdd).toBe('odd')
 })
+
+test('modules include counterModule', () => {
+  const localVue = createLocalVue()
+  localVue.use(Vuex)
+  const store = new Vuex.Store(cloneDeep(storeConfig))
+  expect(Object.keys(store.getters)).toContain('counter/evenOrOdd')
+})
