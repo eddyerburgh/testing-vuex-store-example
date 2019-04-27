@@ -7,8 +7,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 export default {
   name: 'counter',
   methods: {
