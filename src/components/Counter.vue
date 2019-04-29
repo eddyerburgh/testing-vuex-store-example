@@ -7,20 +7,15 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   name: 'counter',
   methods: {
-    increment() {
-      this.$store.commit('increment')
-    }
+    ...mapMutations('counter', ['increment'])
   },
   computed: {
-    count() {
-      return this.$store.state.count
-    },
-    evenOrOdd() {
-      return this.$store.getters.evenOrOdd
-    }
+    ...mapGetters('counter', ['evenOrOdd', 'count'])
   }
 }
 </script>
