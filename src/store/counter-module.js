@@ -3,7 +3,8 @@ const state = {
 }
 
 const getters = {
-  evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
+  evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd',
+  count: state => state.count
 }
 
 const mutations = {
